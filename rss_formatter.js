@@ -12,13 +12,13 @@ export function roundupsToRss(roundups) {
 }
 
 function roundupToRssItem(roundup) {
-    const desc = `${htmlEntities(roundup.blurb)}
+    const desc = `${roundup.blurb}
                  ${roundup.newsTitles.map(newsTitleToLink).join('\n')}`;
 
     return `<item>
                 <title>${htmlEntities(roundup.title)}</title>
                 <link>${roundup.link}</link>
-                <description>${desc}</description>
+                <description>${htmlEntities(desc)}</description>
                 <pubDate>${roundup.pubDate}</pubDate>
                 <guid isPermaLink="true">${roundup.link}</guid>
             </item>`;
