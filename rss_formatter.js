@@ -3,7 +3,7 @@ export function roundupsToRss(roundups) {
             <rss version="2.0" xml:base="https://www.rss.kobylewis.net/allsides" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
                 <channel>
                     <title>AllSides Balanced News Feed - Headline Roundups</title>
-                    <link>https://www.allsides.com/unbiased-balanced-news</link>
+                    <link>https://www.allsides.com/news/rss</link>
                     <description>AllSides Balanced News Feed - Top news stories from the Left, Center and Right.</description>
                     <language>en</language>
                     ${roundups.map(roundup => roundupToRssItem(roundup)).join('\n')}
