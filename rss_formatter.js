@@ -25,7 +25,7 @@ function roundupToRssItem(roundup) {
 }
 
 function newsTitleToLink(newsTitle) {
-    return `<p><a href="${newsTitle.href}">${newsTitle.text}</a> ${newsTitle.source}</p>`;
+    return `<p><strong><a href="${newsTitle.href}">${newsTitle.text}</a></strong> ${newsTitle.source}</p>`;
 }
 
 function htmlEntities(str) {
