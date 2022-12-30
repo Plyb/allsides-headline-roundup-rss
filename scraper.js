@@ -8,7 +8,7 @@ export async function getHeadlineRoundups() {
     const htmlString = (await axios.get(startUrl)).data;
     const $ = load(htmlString);
     
-    const roundupPromises =  [...$('tbody tr')].map(async row => {
+    const roundupPromises =  [...$('tbody tr')].slice(0, 10).map(async row => {
         const titleEl = row.children
             .find(child => child.type === 'tag')
         const { text: title, href: titleHref } = parseTd(titleEl); 
