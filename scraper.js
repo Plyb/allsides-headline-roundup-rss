@@ -18,7 +18,9 @@ export async function getHeadlineRoundups() {
         const roundupDom = load(roundupHtmlString);
 
         const blurb = roundupDom('.story-id-page-description').html();
+        const sourceAreas = roundupDom('.featured-coverage .news-item a.source-area').map((i, el) => load(el).html());
         const newsTitles = [...roundupDom('a.news-title')].map(parseNewsTitle);
+        newsTitles.forEach((newsTitle, i) => newsTitle.source = sourceAreas[i]);
 
         const singleRoundupRssUrl = roundupDom('link[rel="alternate"]').attr('href');
         const singleRoundupRss = (await axios.get(singleRoundupRssUrl)).data; 
